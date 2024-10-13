@@ -41,7 +41,7 @@
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.1",
     "@remix-run/server-runtime": "^2.11.2",
-    "@tailwindcss/typography": "^0.5.14",
+    "@tailwindcss/typography": "^0.5.15",
     "@tanstack/react-table": "^8.20.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.18",
