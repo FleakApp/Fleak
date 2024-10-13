@@ -1,0 +1,400 @@
+@import "https://cdn.plyr.io/3.7.8/plyr.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --plyr-color-main: #89ed00;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    /* --primary: 0 0% 98%; */
+    --primary: 216deg 12.2% 83.92%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 216deg 12.2% 83.92%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+@layer components {
+  .plyr {
+    border-radius: var(--radius) !important;
+  }
+  .plyr__video-wrapper {
+    border-radius: var(--radius) !important;
+  }
+
+  .dark .border {
+  }
+
+  /* .icon,
+  svg.lucide * {
+    /* stroke: red; */
+  /* stroke-opacity: 5%; */
+  /* fill: hsl(var(--destructive));
+		fill-opacity: 5%; */
+  /* 
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px; */
+  /* opacity: 0.75; */
+  /* } */
+  pre {
+    @apply block w-full rounded-lg bg-accent p-2 px-4;
+  }
+
+  code {
+    @apply w-full text-accent-foreground;
+    font-family: monospace;
+    line-height: 0.75rem;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:focus-within,
+  input:-webkit-autofill:focus-visible,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px hsl(var(--background)) inset !important;
+    -webkit-text-fill-color: hsl(var(--primary)) !important;
+  }
+  .menu__list {
+    border-left-width: 1px;
+    /* border-color: rgb(var(--border) / var(--tw-border-opacity)); */
+    /* border-color: blue; */
+    border-style: dashed;
+    margin-left: 33px;
+  }
+  .menu__list > li.menu__link:last-child:after {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--background));
+    border-top-left-radius: 1.5rem;
+    border-color: transparent;
+    content: var(--tw-content);
+    display: block;
+    height: 100%;
+    left: -3.5px;
+    position: absolute;
+    top: 12px;
+    width: 3.5px;
+  }
+  .menu__link {
+    @apply relative px-6 py-1.5;
+  }
+  .menu__link:before {
+    background-color: transparent;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-style: dashed;
+    content: var(--tw-content);
+    display: block;
+    height: 20%;
+    left: -1px;
+    position: absolute;
+    top: 10px;
+    width: 1rem;
+  }
+
+  .brand-text {
+    /* */
+    color: transparent !important;
+    -webkit-text-stroke: 1px hsl(var(--primary));
+    opacity: 0.75;
+    /* 30px */
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+  }
+
+  .spinner {
+    animation: animate-rotate 2s linear infinite;
+    z-index: 2;
+    max-width: 5rem;
+    max-height: 5rem;
+  }
+
+  .path {
+    stroke-linecap: round;
+    animation: animate-dash 1.75s ease-in-out infinite;
+  }
+
+  @keyframes animate-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animate-dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+
+  .fi {
+    width: 1.75rem !important;
+    height: 1.325rem !important;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+
+  /* Loader */
+  .loader-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+  }
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    @apply bg-primary;
+  }
+
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .custom-scroll::-webkit-scrollbar:vertical {
+    width: 5px;
+  }
+
+  .custom-scroll::-webkit-scrollbar:horizontal {
+    height: 5px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    @apply w-2 rounded-xl bg-primary;
+    opacity: 0;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all ease-in-out 3s;
+  }
+
+  .custom-scroll:hover::-webkit-scrollbar-thumb {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    cursor: pointer;
+    @apply rounded-lg bg-transparent p-1;
+  }
+
+  .custom-scroll::-webkit-scrollbar-corner {
+    @apply bg-transparent p-1;
+  }
+}
+
+/* Nprogress */
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: hsl(var(--primary));
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow:
+    0 0 10px hsl(var(--primary)),
+    0 0 5px hsl(var(--primary));
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: hsl(var(--primary));
+  border-left-color: hsl(var(--primary));
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Nprogress */

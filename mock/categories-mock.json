@@ -1,0 +1,163 @@
+[
+  {
+    "id": "0a08d835-d3e1-408e-8f63-ce66a907d78a",
+    "name": "Sport ",
+    "description": "Landscape, people, cultures, customs & history",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286774.0983_eGARyH_100x100_o1i6vq.jpg",
+    "slug": "sport"
+  },
+  {
+    "id": "16297d54-5055-4db2-b53d-d535d706e071",
+    "name": "PUBG",
+    "description": "Playerunknown's Battlegrounds",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557130506.0765_aXuNa4_100x100_v5uwdt.jpg",
+    "slug": "pubg"
+  },
+  {
+    "id": "23cf2077-7085-4f34-89d1-595c1c51b29b",
+    "name": "NSFW",
+    "description": "Basketball, NBA news & highlights",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557297099.4728_VeSAvU_100x100_gricvo.jpg",
+    "slug": "nsfw"
+  },
+  {
+    "id": "2429fc04-34e1-48a7-a270-50acfaa39a8a",
+    "name": "Girl",
+    "description": "Cute / hot / sexy / pretty girls. No sexually explicit content.",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286922.3692_aWySaZ_100x100_v60wbe.jpg",
+    "slug": "girl"
+  },
+  {
+    "id": "31c276a6-ca54-48fd-966b-71d84d3d8804",
+    "name": "Movie & TV",
+    "description": "A way to escape from real world",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286907.1035_hE2uHE_100x100_ub08xj.jpg",
+    "slug": "movie-tv"
+  },
+  {
+    "id": "39978c64-bf85-43ed-90e4-34a11ed4191d",
+    "name": "Drawing, DIY & Crafts",
+    "description": "Illustration, wood work, drawing & painting, Metalsmithing",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286939.2639_Te3EBe_100x100_smdxdr.jpg",
+    "slug": "drawing-diy-crafts"
+  },
+  {
+    "id": "3e212ef5-cbdd-40e8-bd2f-99b692699596",
+    "name": "Rate My Outfit",
+    "description": "Not Safe For Work. No sexually explicit content.",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557453498.4533_yvyBU6_100x100_jlas4s.jpg",
+    "slug": "rate-my-outfit"
+  },
+  {
+    "id": "446cf515-3632-4731-adab-5fe298ededcf",
+    "name": "Crappy Design",
+    "description": "Design fails, bad design, asshole design, bad UX",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000007/categories/1557286985.8981_4eqENa_100x100_yaju2y.jpg",
+    "slug": "crappy-design"
+  },
+  {
+    "id": "5c791ee7-429b-4ad4-b86c-3e6c618fdd7c",
+    "name": "Horror",
+    "description": "Fear to the limit of fun",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286914.1262_U3EQav_100x100_tgvf1o.jpg",
+    "slug": "horror"
+  },
+  {
+    "id": "5d41f440-5ad1-4351-9a11-dfafcacf7281",
+    "name": "Guy",
+    "description": "Hot gentlemen",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557295872.771_uTAnAD_100x100_g7qf26.jpg",
+    "slug": "guy"
+  },
+  {
+    "id": "5e9e06ad-1ef7-4a48-a2ac-c53e17d6e8ad",
+    "name": "School",
+    "description": "Survival guide for students",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557290674.9492_ARAda3_100x100_gfpanq.jpg",
+    "slug": "school"
+  },
+  {
+    "id": "71c19a9f-e632-4eea-ba8d-dd4a6f324bd1",
+    "name": "Music",
+    "description": "Drop the beat now",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286900.9909_E8EGyp_100x100_g05mtd.jpg",
+    "slug": "music"
+  },
+  {
+    "id": "88e46ff6-2509-414f-bff6-911ab85cfd84",
+    "name": "Warhammer",
+    "description": "For the emperor",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557123640.8958_YWaGUb_100x100_uwf5st.jpg",
+    "slug": "warhammer"
+  },
+  {
+    "id": "afedf0f4-bfb2-47e4-9da9-ab4c32deb34e",
+    "name": "Science & Tech",
+    "description": "Science lab, tech news, mobile gadgets",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286779.394_WYru9a_100x100_mftjcy.jpg",
+    "slug": "science-tech"
+  },
+  {
+    "id": "ba3cd64f-d815-4e99-b91d-0ce0253081e8",
+    "name": "Star Wars",
+    "description": "May the force be with you",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557123636.2678_UPYNuT_100x100_rwwhqh.jpg",
+    "slug": "star-wars"
+  },
+  {
+    "id": "d22c96b2-cb4b-4855-8e85-3b39476148fe",
+    "name": "Basketball",
+    "description": "Michelle freking Jordan is god m8",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000007/categories/1557286654.1198_yNyna7_100x100_ujtaes.jpg",
+    "slug": "basketball"
+  },
+  {
+    "id": "d655dab3-47f8-4528-903d-78917561aca3",
+    "name": "Politics ",
+    "description": "Political jokes. Deep or derp.",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286889.2504_mEVy2A_100x100_byp2ah.jpg",
+    "slug": "politics"
+  },
+  {
+    "id": "d8ed0a94-999a-4baf-9900-02eb30169921",
+    "name": "Timely",
+    "description": "Show off your Outfits, Sneakers, Watch, Glasses",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286757.4584_Du3Eba_100x100_khuhs5.jpg",
+    "slug": "timely"
+  },
+  {
+    "id": "da652f76-e642-4483-93ca-c6132be956e2",
+    "name": "Food & Drinks",
+    "description": "Crazy foodies ",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557295964.6843_uHyTu2_100x100_ogyhz6.jpg",
+    "slug": "food-drinks"
+  },
+  {
+    "id": "eb4ade88-174b-426a-af36-b68f85d6b496",
+    "name": "History",
+    "description": "Rediscover the past",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557296197.2188_XEhabA_100x100_tgvqcf.jpg",
+    "slug": "history"
+  },
+  {
+    "id": "ed41487f-d525-437e-bbbd-2714df58ad00",
+    "name": "Football",
+    "description": "Premier League, La Liga, Bundesliga, Serie A",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557287081.4699_5A9aLe_100x100_ucsty6.jpg",
+    "slug": "football"
+  },
+  {
+    "id": "f1bd5f79-1764-417a-80c6-327072007b2b",
+    "name": "Gaming",
+    "description": "We don't die, we respawn!",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557286928.6604_uTYgug_100x100_pwr4ag.jpg",
+    "slug": "gaming"
+  },
+  {
+    "id": "fa266ee5-5e25-44a4-aaaf-47b066efe033",
+    "name": "Relationship",
+    "description": "Unhelpful relationship advice",
+    "image": "https://res.cloudinary.com/di0adij7g/image/upload/v1724000008/categories/1557281608.0144_yjEDu7_100x100_smlq7e.jpg",
+    "slug": "relationship"
+  }
+]

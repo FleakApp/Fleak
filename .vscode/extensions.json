@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "intellsmi.comment-translate",
+    "equinusocio.vsc-material-theme",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "Prisma.prisma",
+    "ms-ceintl.vscode-language-pack-pl",
+    "cweijan.dbclient-jdbc"
+  ]
+}

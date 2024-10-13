@@ -1,0 +1,278 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters", "omitApi", "fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String    @id @default(uuid())
+  first_name         String?
+  last_name          String?
+  username           String    @unique
+  bio                String?
+  email              String?   @unique
+  emailVerifiedToken String?   @unique
+  emailVerified      DateTime?
+  verified           DateTime?
+  password           String?
+  image              String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  ip      String?
+  loginAt DateTime?
+
+  // relations
+  roles         Role[]
+  account       Account?
+  notifications Notification[]
+  posts         Post[]
+  comments      Comment[]
+  likes         Like[]
+  votes         Vote[]
+
+  followers Follows[] @relation("following")
+  following Follows[] @relation("follower")
+  issues    Issue[]
+
+  @@map("users")
+}
+
+model Follows {
+  // id          String @id @default(uuid())
+  follower    User   @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  followerId  String
+  following   User   @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+  followingId String
+
+  @@id([followerId, followingId])
+  @@map("followers")
+}
+
+model Role {
+  id          String @id @default(uuid())
+  name        String @unique
+  description String @default("")
+  users       User[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("roles")
+}
+
+model Account {
+  id                String  @id @default(uuid())
+  user_id           String  @unique
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@map("accounts")
+}
+
+model Notification {
+  id        String    @id @default(uuid())
+  data      String
+  url       String?
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+
+  @@map("notifications")
+}
+
+model Category {
+  id          String  @id @default(uuid())
+  name        String  @unique
+  description String?
+  image       String?
+  cover       String?
+  slug        String?
+
+  post Post[]
+
+  active Boolean @default(true)
+
+  @@map("categories")
+}
+
+enum PostType {
+  Photo
+  Animated
+  Article
+  Iframe
+}
+
+model Post {
+  id String @id @default(uuid())
+
+  title     String
+  slug      String   @unique
+  content   String?
+  image     String?
+  type      PostType @default(Photo)
+  iframe    String?
+  sensitive Boolean  @default(false)
+  views     Int      @default(0)
+  upVotes   Int      @default(0)
+
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // relations
+  // votes
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  tags Tag[]
+
+  comments Comment[]
+  likes    Like[]
+  votes    Vote[]
+  issues   Issue[]
+  visits   Visit[]
+
+  @@map("posts")
+}
+
+model Visit {
+  id String @id @default(uuid())
+  ip String
+
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+
+  @@map("visits")
+}
+
+model Tag {
+  id      String @id @default(uuid())
+  content String
+
+  posts Post[]
+
+  @@map("tags")
+}
+
+model Comment {
+  id      String @id @default(uuid())
+  content String
+
+  upVotes Int @default(0)
+
+  post   Post?   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  active    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reply   Comment? @relation("Comment", fields: [replyId], references: [id], onDelete: Cascade)
+  replyId String?
+
+  replies Comment[] @relation("Comment")
+
+  likes Like[]
+  votes Vote[]
+
+  @@map("commments")
+}
+
+model Like {
+  id String @id @default(uuid())
+
+  post   Post?   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String?
+
+  comment   Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId String?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  @@map("likes")
+}
+
+enum VoteType {
+  UP
+  DOWN
+}
+
+model Vote {
+  id String @id @default(uuid())
+
+  type VoteType @default(UP)
+
+  post   Post?   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String?
+
+  comment   Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId String?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("votes")
+}
+
+model Issue {
+  id String @id @default(uuid())
+
+  title       String
+  description String
+  reason      String
+
+  resolved Boolean @default(false)
+
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("issues")
+}
+
+model Messages {
+  id String @id @default(uuid())
+
+  email      String
+  first_name String
+  last_name  String
+
+  phone   String
+  message String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("messages")
+}

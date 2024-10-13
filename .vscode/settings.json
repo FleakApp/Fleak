@@ -1,0 +1,57 @@
+{
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "editor.tabCompletion": "on",
+  "eslint.rules.customizations": [
+    {
+      "rule": "@typescript-eslint/ban-ts-comment",
+      "severity": "info"
+    },
+    {
+      "rule": "@typescript-eslint/no-misused-promises",
+      "severity": "info"
+    },
+    {
+      "rule": "@typescript-eslint/no-unsafe-assignment",
+      "severity": "warn"
+    },
+    {
+      "rule": "@typescript-eslint/no-unused-vars",
+      "severity": "warn"
+    },
+    {
+      "rule": "@typescript-eslint/consistent-indexed-object-style",
+      "severity": "info"
+    }
+  ],
+  "tailwindCSS.experimental.configFile": "./tailwind.config.ts",
+  "typescript.tsserver.experimental.useVsCodeWatcher": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "Source Code Pro, monospace",
+  "editor.fontSize": 18,
+  "commentTranslate.hover.enabled": true,
+  "commentTranslate.targetLanguage": "en",
+  "commentTranslate.source": "Google",
+  "sqltools.connections": [
+    {
+      "pgOptions": {
+        "ssl": {
+          "rejectUnauthorized": true
+        }
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "driver": "PostgreSQL",
+      "name": "ep-divine-brook-a4jzbrof-pooler.us-east-1.aws.neon.tech",
+      "connectString": "postgres://default:YodbNe7a1WRB@ep-divine-brook-a4jzbrof.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+    }
+  ]
+}

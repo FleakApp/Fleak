@@ -1,0 +1,9 @@
+node_modules
+.idea
+/.cache
+/build
+
+# .env
+vite.config.ts.timestamp-*
+.vercel
+.vercelignore
