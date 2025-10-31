@@ -7,6 +7,7 @@ import { formError, validateFormData } from "@fleak-org/remix-utils";
 import { requireUser } from "@/helpers/auth";
 import { subtractHours } from "@/helpers/misc";
 import { auth } from "@/services/authenticate/auth.server";
+import { sanitizeComment } from "@/services/sanitize.server";
 import type { User } from "@/services/db.server";
 import { prisma } from "@/services/db.server";
 import { savefollowerNotification } from "@/use-cases/notifications";
@@ -32,9 +33,10 @@ export async function action({ request }: ActionFunctionArgs) {
 
   const replyId = formData.get("reply_id");
 
-  const str = String(formData.get("content"));
+  const rawContent = String(formData.get("content"));
 
-  const content = str;
+  // Sanitize user-generated content before saving to database
+  const content = sanitizeComment(rawContent);
 
   // const res = content.match(/\B@\w+/g);
   // console.log("Comment Mentions found:", res);

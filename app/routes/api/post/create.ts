@@ -17,6 +17,7 @@ import { requireUser } from "@/helpers/auth";
 import { accentsTidy, subtractMinutes } from "@/helpers/misc";
 import { auth } from "@/services/authenticate/auth.server";
 import { uploadCloudinaryStream } from "@/services/cloudinary.server";
+import { sanitizePostContent, sanitizeTitle } from "@/services/sanitize.server";
 import type { User } from "@/services/db.server";
 import { prisma } from "@/services/db.server";
 import { savefollowerNotification } from "@/use-cases/notifications";
@@ -198,26 +199,19 @@ export async function action({ request }: ActionFunctionArgs) {
     );
   }
 
-  const content = String(formData.get("content"));
+  const rawContent = String(formData.get("content") || "");
+  const rawTitle = String(formData.get("title"));
 
-  // const urlExpression =
-  //   /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-
-  // const matchedUrls = content.match(urlExpression);
-  // // console.log("Post url founds:", matchedUrls);
-
-  // if (matchedUrls && matchedUrls?.length > 0) {
-  //   matchedUrls?.map((url) => {
-  //     content = content.replaceAll(url, `[${url}](${url})`);
-  //   });
-  // }
+  // Sanitize user-generated content before saving to database
+  const sanitizedTitle = sanitizeTitle(rawTitle);
+  const sanitizedContent = rawContent ? sanitizePostContent(rawContent) : null;
 
   const post = await prisma.post.create({
     data: {
-      title: String(formData.get("title")),
-      slug: slugify(String(formData.get("title"))),
+      title: sanitizedTitle,
+      slug: slugify(sanitizedTitle),
 
-      content,
+      content: sanitizedContent,
       type: String(formData.get("type")) as AllowedType,
       image: String(uploaded),
 

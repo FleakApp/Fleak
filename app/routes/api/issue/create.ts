@@ -6,6 +6,7 @@ import { formError, validateFormData } from "@fleak-org/remix-utils";
 
 import { requireUser } from "@/helpers/auth";
 import { auth } from "@/services/authenticate/auth.server";
+import { sanitizeIssue, sanitizeTitle } from "@/services/sanitize.server";
 import type { User } from "@/services/db.server";
 import { prisma } from "@/services/db.server";
 
@@ -30,11 +31,16 @@ export async function action({ request }: ActionFunctionArgs) {
     return formError(result);
   }
 
+  // Sanitize user-generated content before saving to database
+  const sanitizedTitle = sanitizeTitle(result.data.title);
+  const sanitizedDescription = sanitizeIssue(result.data.description);
+  const sanitizedReason = sanitizeIssue(result.data.reason);
+
   const issue = await prisma.issue.create({
     data: {
-      title: result.data.title,
-      description: result.data.description,
-      reason: result.data.reason,
+      title: sanitizedTitle,
+      description: sanitizedDescription,
+      reason: sanitizedReason,
       user: {
         connect: {
           id: user.id,

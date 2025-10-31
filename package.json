@@ -54,7 +54,11 @@
     "dayjs": "^1.11.11",
     "debug": "^4.3.6",
     "express": "^4.18.2",
+    "express-rate-limit": "^7.4.1",
     "i18next": "^23.12.3",
+    "ioredis": "^5.4.1",
+    "isomorphic-dompurify": "^2.15.1",
+    "rate-limit-redis": "^5.0.1",
     "isbot": "^4.1.0",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
@@ -82,9 +86,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@fleak-org/eslint-config": "^0.0.1",
-    "@fleak-org/remix-convention": "^0.0.1",
-    "@fleak-org/tailwind-config": "^0.0.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@prisma/client": "^5.18.0",
     "@remix-run/dev": "^2.9.2",
@@ -109,14 +110,6 @@
     "typescript": "^5.3.3",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.1"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@fleak-org/eslint-config/base",
-      "@fleak-org/eslint-config/remix",
-      "@fleak-org/eslint-config/react"
-    ]
   },
   "engines": {
     "node": ">=20.0.0"

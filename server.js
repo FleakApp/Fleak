@@ -2,6 +2,8 @@ import { createRequestHandler } from "@remix-run/express";
 import compression from "compression";
 import express from "express";
 import morgan from "morgan";
+import rateLimit from "express-rate-limit";
+import { applyRateLimits } from "./config/rate-limit.js";
 
 const viteDevServer =
   process.env.NODE_ENV === "production"
@@ -20,6 +22,9 @@ const remixHandler = createRequestHandler({
 
 const app = express();
 
+// Trust proxy for correct IP detection behind Vercel/reverse proxy
+app.set("trust proxy", 1);
+
 app.use(compression());
 
 //Set Request Size Limit 52428800 // for 50mb, this corresponds to the size in bytes
@@ -27,6 +32,9 @@ app.use(compression());
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
 app.disable("x-powered-by");
+
+// Apply granular rate limits (production-ready, centralized config)
+applyRateLimits(app);
 
 // handle asset requests
 if (viteDevServer) {
