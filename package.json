@@ -37,7 +37,7 @@
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
-    "@remix-run/express": "^2.9.2",
+    "@remix-run/express": "^2.12.1",
     "@remix-run/node": "^2.9.2",
     "@remix-run/react": "^2.9.1",
     "@remix-run/server-runtime": "^2.11.2",

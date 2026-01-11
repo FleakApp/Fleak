@@ -45,8 +45,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.3)(react@18.3.1)
       '@remix-run/express':
-        specifier: ^2.9.2
-        version: 2.10.3(express@4.19.2)(typescript@5.5.3)
+        specifier: ^2.12.1
+        version: 2.12.1(express@4.19.2)(typescript@5.5.3)
       '@remix-run/node':
         specifier: ^2.9.2
         version: 2.10.3(typescript@5.5.3)
@@ -2043,8 +2043,8 @@ packages:
       wrangler:
         optional: true
 
-  '@remix-run/express@2.10.3':
-    resolution: {integrity: sha512-EkSBQAz3ykoGTrCEP2hC1TOn9tQ3zlcWYeJnECinZzzHQ0ERHP6cKlEYV+pOmY1oRDxn8lMxVa+OL+krDA+xbA==}
+  '@remix-run/express@2.12.1':
+    resolution: {integrity: sha512-CW5coZXxk8251Tr0Fh9jmhda5Xt/BWfnUyD7jxth30irpWAEQcsaBu4pSDKuRvnJ8j2o7087EBnUn7oCB4ofNg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       express: ^4.19.2
@@ -2055,6 +2055,15 @@ packages:
 
   '@remix-run/node@2.10.3':
     resolution: {integrity: sha512-LBqsgADJKW7tYdJZZi2wu20gfMm6UcOXbvb5U70P2jCNxjJvuIw1gXVvNXRJKAdxPKLonjm8cSpfoI6HeQKEDg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@remix-run/node@2.12.1':
+    resolution: {integrity: sha512-d+IHvEEU3qziporgpEyKFvKdmNaDu+a/9pIxBkNKVWdKx2JR0VRFIaUxxpxISWtkJcoNuERhW2xYa6YvtFp4ig==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: ^5.1.0
@@ -2081,6 +2090,10 @@ packages:
     resolution: {integrity: sha512-S45oynt/WH19bHbIXjtli6QmwNYvaz+vtnubvNpNDvUOoA/OWh6j1OikIP3G+v5GHdxyC6EXoChG3HgYGEUfcg==}
     engines: {node: '>=14.0.0'}
 
+  '@remix-run/router@1.19.2':
+    resolution: {integrity: sha512-baiMx18+IMuD1yyvOGaHM9QrVUPGGG0jC+z+IPHnRJWUAUvaKuWKyE8gjDj2rzv3sz9zOGoRSPgeBVHRhZnBlA==}
+    engines: {node: '>=14.0.0'}
+
   '@remix-run/server-runtime@2.10.3':
     resolution: {integrity: sha512-vUl5jONUI6Lj0ICg9FSRFhoPzQdZ/7dpT1m7ID13DF5BEeF3t/9uCJS61XXWgQ/JEu7YRiwvZiwSRTrgM7zeWw==}
     engines: {node: '>=18.0.0'}
@@ -2092,6 +2105,15 @@ packages:
 
   '@remix-run/server-runtime@2.11.2':
     resolution: {integrity: sha512-abG6ENj0X3eHqDxqO2thWM2NSEiPnqyt58z1BbiQCv+t8g0Zuqd5QHbB4wzdNvfS0vKhg+jJiigcJneAc4sZzw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@remix-run/server-runtime@2.12.1':
+    resolution: {integrity: sha512-iuj9ju34f0LztPpd5dVuTXgt4x/MJeRsBiLuEx02nDSMGoNCAIx2LdeNYvE+XXdsf1Ht2NMlpRU+HBPCz3QLZg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: ^5.1.0
@@ -3563,6 +3585,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -6121,6 +6144,9 @@ packages:
 
   turbo-stream@2.3.0:
     resolution: {integrity: sha512-PhEr9mdexoVv+rJkQ3c8TjrN3DUghX37GNJkSMksoPR4KrXIPnM2MnqRt07sViIqX9IdlhrgtTSyjoVOASq6cg==}
+
+  turbo-stream@2.4.0:
+    resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
 
   twitter-api-v2@1.17.2:
     resolution: {integrity: sha512-V8QvCkuQ+ydIakwYbVC4cuQxGlvjdRZI0L7TT5v9zGsf+SwX40rv3IFRHB8Z1cXJLcRFT0FI3xG3/f4zwS6cRA==}
@@ -8718,9 +8744,9 @@ snapshots:
       - ts-node
       - utf-8-validate
 
-  '@remix-run/express@2.10.3(express@4.19.2)(typescript@5.5.3)':
+  '@remix-run/express@2.12.1(express@4.19.2)(typescript@5.5.3)':
     dependencies:
-      '@remix-run/node': 2.10.3(typescript@5.5.3)
+      '@remix-run/node': 2.12.1(typescript@5.5.3)
       express: 4.19.2
     optionalDependencies:
       typescript: 5.5.3
@@ -8728,6 +8754,18 @@ snapshots:
   '@remix-run/node@2.10.3(typescript@5.5.3)':
     dependencies:
       '@remix-run/server-runtime': 2.10.3(typescript@5.5.3)
+      '@remix-run/web-fetch': 4.4.2
+      '@web3-storage/multipart-parser': 1.0.0
+      cookie-signature: 1.2.1
+      source-map-support: 0.5.21
+      stream-slice: 0.1.2
+      undici: 6.19.2
+    optionalDependencies:
+      typescript: 5.5.3
+
+  '@remix-run/node@2.12.1(typescript@5.5.3)':
+    dependencies:
+      '@remix-run/server-runtime': 2.12.1(typescript@5.5.3)
       '@remix-run/web-fetch': 4.4.2
       '@web3-storage/multipart-parser': 1.0.0
       cookie-signature: 1.2.1
@@ -8753,6 +8791,8 @@ snapshots:
 
   '@remix-run/router@1.19.1': {}
 
+  '@remix-run/router@1.19.2': {}
+
   '@remix-run/server-runtime@2.10.3(typescript@5.5.3)':
     dependencies:
       '@remix-run/router': 1.18.0
@@ -8774,6 +8814,18 @@ snapshots:
       set-cookie-parser: 2.6.0
       source-map: 0.7.4
       turbo-stream: 2.3.0
+    optionalDependencies:
+      typescript: 5.5.3
+
+  '@remix-run/server-runtime@2.12.1(typescript@5.5.3)':
+    dependencies:
+      '@remix-run/router': 1.19.2
+      '@types/cookie': 0.6.0
+      '@web3-storage/multipart-parser': 1.0.0
+      cookie: 0.6.0
+      set-cookie-parser: 2.6.0
+      source-map: 0.7.4
+      turbo-stream: 2.4.0
     optionalDependencies:
       typescript: 5.5.3
 
@@ -13698,6 +13750,8 @@ snapshots:
   turbo-stream@2.2.0: {}
 
   turbo-stream@2.3.0: {}
+
+  turbo-stream@2.4.0: {}
 
   twitter-api-v2@1.17.2: {}
 
